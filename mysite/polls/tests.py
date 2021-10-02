@@ -59,16 +59,16 @@ class QuestionIndexViewTests(TestCase):
         self.assertQuerysetEqual(response.context['latest_question_list'], [])
 
     def test_past_question(self):
-        """
-        Questions with a pub_date in the past are displayed on the
-        index page.
-        """
-        question = create_question(question_text="Past question.", days=-30)
-        response = self.client.get(reverse('polls:index'))
-        self.assertQuerysetEqual(
-            response.context['latest_question_list'],
-            [question],
-        )
+         """
+         Questions with a pub_date in the past are displayed on the
+         index page.
+         """
+         question = create_question(question_text="Past question.", days=-30)
+         response = self.client.get(reverse('polls:index'))
+         self.assertQuerysetEqual(
+             response.context['latest_question_list'],
+             [question],
+         )
 
     def test_future_question(self):
         """
@@ -102,7 +102,7 @@ class QuestionIndexViewTests(TestCase):
         response = self.client.get(reverse('polls:index'))
         self.assertQuerysetEqual(
             response.context['latest_question_list'],
-            [question2, question1],
+            [question1, question2],
         )
 
 class QuestionDetailViewTests(TestCase):
