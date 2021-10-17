@@ -1,19 +1,17 @@
 language: python
-
 python:
-  - 3.9
-
+  - "2.7"
+  - "3.4"
+  - "3.5"
+  - "3.6"      # current default Python on Travis CI
+  - "3.7"
+  - "3.8"
+  - "3.9"
+  - "3.9-dev"  # 3.9 development branch
+  - "nightly"  # nightly build
+# command to install dependencies
 install:
   - pip install -r requirements.txt
-
-before_script:
-  - python manage.py migrate
-  - python manage.py collectstatic --noinput
-
+# command to run tests
 script:
-  - black --check .
-  - flake8 .
-  - coverage run --source=register,signin,jobs,examresults,dashboard,faq,contactus manage.py test
-
-after_script:
-  - coveralls 
+  - pytest
