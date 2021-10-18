@@ -1,7 +1,0 @@
-repo_token: SvED3La2Nsrhx6ig26YrUZLRnDqxprWAo
-
-require 'coveralls'
-Coveralls.wear!
-# ./Gemfile
-
-gem 'coveralls', require: false
