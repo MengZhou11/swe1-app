@@ -1,4 +1,4 @@
-repo_token
+repo_token: SvED3La2Nsrhx6ig26YrUZLRnDqxprWAo
 
 require 'coveralls'
 Coveralls.wear!
