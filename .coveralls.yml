@@ -1,0 +1,7 @@
+repo_token
+
+require 'coveralls'
+Coveralls.wear!
+# ./Gemfile
+
+gem 'coveralls', require: false
