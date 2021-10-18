@@ -6,8 +6,10 @@ before-install:
   - pip install -r requirements.txt
   - pip install flake8
   - pip install black
+  - pip install coveralls
 script:
 #  - flake8 --max-line-length=100
   - black --check .
+  - coverage run --source=home manage.py test home
 after_success:
   - coveralls
