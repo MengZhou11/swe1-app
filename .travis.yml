@@ -9,7 +9,7 @@ before-install:
   - pip install coverage
   - pip install coveralls
 script:
-#  - flake8 --max-line-length=100
+  - flake8 --max-line-length=88 .
   - black --check .
 #  - coverage run --source=home manage.py test home
 after_success:
