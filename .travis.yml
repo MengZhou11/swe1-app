@@ -3,7 +3,7 @@ script: python manage.py
 language:
   - python
 before-install:
- - python manage.py migrate
+  - python manage.py migrate
   - pip install -r requirements.txt
   - pip install flake8
   - pip install black
@@ -12,6 +12,5 @@ before-install:
 script:
   - black --check .
   - flake8 .
-  - coverage run --source=home manage.py test home
 after_success:
   - coveralls
